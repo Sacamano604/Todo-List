@@ -1,10 +1,18 @@
-var addItem = function(itemToAdd){
-	//console.log(itemToAdd);
-	//document.getElementById('actualList').innerHTML = "<p> " + itemToAdd + " </p>";
-	var tagCreate = document.getElementById('resultsTable');
-	tagCreate.appendChild(document.createElement('tr'));
-	tagCreate.className = 'bg-info';
-	var item = document.getElementById('resultsTable');
-	item.appendChild(document.createTextNode(itemToAdd));
-	//document.getElementById('resultsTable').innerHTML = "<tr>" + itemToAdd + "</tr>";
+function addItem() {
+    var value = document.getElementById('userInput').value,
+        taskListContainer = document.getElementById('task-list');
+    var html = '<article id="task-item" style="padding-bottom: 10px;">' + value + ' <button type="button" class="btn btn-danger" title="Delete tasks">Remove</button>' +
+        '</article>';
+    
+    taskListContainer.insertAdjacentHTML('beforeend', html);
 }
+
+var deleteItem = function(event){
+    var isDeleteBtnClicked = event.target.className === 'btn btn-danger';
+    if(isDeleteBtnClicked){
+        var taskElement = event.target.parentNode;
+        document.getElementById('task-list').removeChild(taskElement);
+    }
+}
+document.getElementById('task-list').addEventListener('click', deleteItem);
+document.getElementById('add-task').addEventListener('click', addItem);

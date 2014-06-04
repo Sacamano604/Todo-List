@@ -13,29 +13,21 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <style type="text/css">
-
-    </style>
   </head> 
   <body>
       <div class="container">
       <div class="page-header">
       <h3>To-Do List</h3>
-        <form role="form">
+           <!-- Form field to input item for the list -->
            <div class="form-group">
-<!--            <label for="itemToAdd">Email address</label> -->
-            <input type="itemToAdd" class="form-control" id="itemToAdd" placeholder="Enter item">
-          </div>
-        <button type="submit" class="btn btn-primary" onclick="addItem(document.getElementById('itemToAdd').value); return false;">Add Item</button>
-      </form>
-      </div>
-      <table id="resultsTable" width="100%">
-        
-      </table>
-
-
-  
-  </div>
+              <input id='userInput' class="form-control" placeholder="Enter item to add">
+           </div>
+          <button id="add-task" class="btn btn-primary" >Add</button>
+        </div>
+    <!-- Task list is the ouput area for the list -->
+     <div id="task-list">
+     </div>
+ </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
