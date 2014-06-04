@@ -1,12 +1,12 @@
+// Function to add item
 function addItem() {
     var value = document.getElementById('userInput').value,
         taskListContainer = document.getElementById('task-list');
-    var html = '<article id="task-item" style="padding-bottom: 10px;">' + value + ' <button type="button" class="btn btn-danger" title="Delete tasks">Remove</button>' +
+    var html = '<article id="task-item" style="padding-bottom: 10px;">' + value + ' <button type="button" class="btn btn-danger">Remove</button>' +
         '</article>';
-    
     taskListContainer.insertAdjacentHTML('beforeend', html);
 }
-
+//Function for deleting items
 var deleteItem = function(event){
     var isDeleteBtnClicked = event.target.className === 'btn btn-danger';
     if(isDeleteBtnClicked){
@@ -14,5 +14,6 @@ var deleteItem = function(event){
         document.getElementById('task-list').removeChild(taskElement);
     }
 }
+//event listeners for the specific functions to be called
 document.getElementById('task-list').addEventListener('click', deleteItem);
 document.getElementById('add-task').addEventListener('click', addItem);
