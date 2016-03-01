@@ -7,6 +7,24 @@
     <title>To-Do List</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+      .page-header {  
+        border-bottom: none;
+      }
+      li {
+        border-bottom: 1px solid #eee;
+        font-size: 1.5em;
+        margin-top: 10px;
+      }
+      .btn-success, .btn-danger {
+        float: right;
+        margin: 5px;
+      }
+      .complete {
+        text-decoration: line-through;
+        color: #cfcfcf;
+      }
+    </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesnt work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -15,24 +33,25 @@
     <![endif]-->
   </head> 
   <body>
-      <div class="container">
-        <div class="page-header">
-          <div class=".col-md-4">
-            <h3>To-Do List</h3>
-            <!-- Form field to input item for the list -->
-            <div class="form-group">
-              <input id='userInput' class="form-control" placeholder="Enter item to add">
-           </div>
+  <div class="container">
+    <div class="page-header">
+      <div class=".col-md-4">
+        <h3>To-Do List</h3>
+        <!-- Form field to input item for the list -->
+          <div class="form-inline">
+            <input id='userInput' class="form-control" placeholder="Enter item to add">
             <button id="add-task" class="btn btn-primary" >Add</button>
-        </div>
+          </div>
+      </div>      
+    </div>
     <!-- Task list is the ouput area for the list -->
-     <div id="task-list">
-     </div>
- </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/todoList.js"></script>
+    <ul class="list-unstyled" id="task-list"></ul>
+  </div>
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/todoList.js"></script>
   </body>
 </html>
